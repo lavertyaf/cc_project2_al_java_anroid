@@ -1,0 +1,15 @@
+Airline Trolley App
+
+Goal: Develop a system for tracking orders onboard a plane.  This app is for air stewards and not for customers
+
+MVP
+
+Stewards will use the app to select items from the stock and create a bill for the transaction.
+
+Orders will be simple and only include items from the menu (like:  1 * Coffee, 1 * Scone, 2 * Diet Coke)
+
+Orders should be assigned to a seat. 
+
+Stewards can mark the transaction as paid and record which payment type is used.
+
+There will be a running total for what has been sold throughout the shift to manage money and stock replenishment for next flight.
