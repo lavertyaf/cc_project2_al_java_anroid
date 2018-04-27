@@ -18,7 +18,15 @@ public class Trolley {
         return stockList;
     }
 
-    public Item getItem() {
-        return item;
+    public void addItem(Item item){
+        this.stockList.add(item);
+    }
+
+    public int itemsInStocklist(){
+      return this.stockList.size();
+    }
+
+    public void sellItem(Item item){
+        this.stockList.remove(item);
     }
 }
