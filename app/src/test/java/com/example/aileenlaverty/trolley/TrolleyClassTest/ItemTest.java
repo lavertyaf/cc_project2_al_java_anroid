@@ -34,25 +34,25 @@ public class ItemTest {
 
     @Before
     public void before(){
-        coffee = new Item("Coffee", 2.50, ItemType.DRINK);
-        coke = new Item("Coke",2.00, ItemType.DRINK);
-        dietCoke = new Item("Diet Coke", 2.00, ItemType.DRINK);
-        tonic = new Item("Tonic", 2.00, ItemType.DRINK);
-        lemonade = new Item("Lemonade", 2.00, ItemType.DRINK);
-        tea = new Item("Tea", 2.50, ItemType.DRINK);
-        beer = new Item("Beer", 4.00, ItemType.DRINK);
-        whiteWine = new Item("White wine", 4.50, ItemType.DRINK);
-        redWine = new Item("Red wine", 4.50, ItemType.DRINK);
-        vodka = new Item("Vodka", 4.00, ItemType.DRINK);
-        gin = new Item("Gin", 4.00, ItemType.DRINK);
-        whisky = new Item("Whisky",4.00, ItemType.DRINK);
-        nuts = new Item("Nuts", 1.50, ItemType.COLD_FOOD);
-        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD);
-        crisps = new Item("Crisps", 1.00, ItemType.COLD_FOOD);
-        kitKat = new Item("Kit Kat", 1.00, ItemType.COLD_FOOD);
-        panini = new Item("Cheese & Ham Panini", 4.00, ItemType.HOT_FOOD);
-        miniPizza = new Item("Pepperoni Mini Pizza", 4.00, ItemType.HOT_FOOD);
-        croissant = new Item("Cheese & Ham croissant", 3.50, ItemType.HOT_FOOD);
+        coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
+        coke = new Item("Coke",2.00, ItemType.DRINK, 11);
+        dietCoke = new Item("Diet Coke", 2.00, ItemType.DRINK, 13);
+        tonic = new Item("Tonic", 2.00, ItemType.DRINK, 14);
+        lemonade = new Item("Lemonade", 2.00, ItemType.DRINK, 12893);
+        tea = new Item("Tea", 2.50, ItemType.DRINK, 15);
+        beer = new Item("Beer", 4.00, ItemType.DRINK, 16);
+        whiteWine = new Item("White wine", 4.50, ItemType.DRINK, 17);
+        redWine = new Item("Red wine", 4.50, ItemType.DRINK, 18);
+        vodka = new Item("Vodka", 4.00, ItemType.DRINK, 19);
+        gin = new Item("Gin", 4.00, ItemType.DRINK, 20);
+        whisky = new Item("Whisky",4.00, ItemType.DRINK, 21);
+        nuts = new Item("Nuts", 1.50, ItemType.COLD_FOOD, 50);
+        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
+        crisps = new Item("Crisps", 1.00, ItemType.COLD_FOOD, 52);
+        kitKat = new Item("Kit Kat", 1.00, ItemType.COLD_FOOD, 53);
+        panini = new Item("Cheese & Ham Panini", 4.00, ItemType.HOT_FOOD, 101);
+        miniPizza = new Item("Pepperoni Mini Pizza", 4.00, ItemType.HOT_FOOD, 102);
+        croissant = new Item("Cheese & Ham croissant", 3.50, ItemType.HOT_FOOD, 103);
 
     }
 

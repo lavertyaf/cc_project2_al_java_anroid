@@ -5,11 +5,13 @@ public class Item {
     private String name;
     private double price;
     private ItemType itemType;
+    private int PLU;
 
-    public Item(String name, double price, ItemType itemType) {
+    public Item(String name, double price, ItemType itemType, int PLU) {
         this.name = name;
         this.price = price;
         this.itemType = itemType;
+        this.PLU = PLU;
     }
 
     public String getName() {
@@ -22,5 +24,9 @@ public class Item {
 
     public ItemType getItemType() {
         return itemType;
+    }
+
+    public int getPLU() {
+        return PLU;
     }
 }

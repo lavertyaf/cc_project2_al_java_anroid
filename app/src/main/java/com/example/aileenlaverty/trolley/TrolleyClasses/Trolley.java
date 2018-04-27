@@ -3,30 +3,43 @@ package com.example.aileenlaverty.trolley.TrolleyClasses;
 import com.example.aileenlaverty.trolley.Consumables.Item;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Trolley {
 
-    private ArrayList<Item> stockList;
-    private Item item;
+    private HashMap<String, Integer> stockList;
 
-    public Trolley (ArrayList<Item> stockList){
+    public Trolley (HashMap<String, Integer> stockList){
         this.stockList = stockList;
-        this.item = item;
     }
 
-    public ArrayList<Item> getStockList() {
+    public HashMap<String, Integer> getStockList() {
         return stockList;
     }
 
-    public void addItem(Item item){
-        this.stockList.add(item);
+    public int itemsInStockList(){
+      Collection<Integer> itemsArray = this.stockList.values();
+      int sum = 0;
+      for(Integer i : itemsArray){
+          sum += i;
+      }
+      return sum;
     }
 
-    public int itemsInStocklist(){
-      return this.stockList.size();
+    public void addItem(String string, Integer increaseBy){
+        int countBefore = this.stockList.getOrDefault(string, 0);
+        int countAfter = countBefore + increaseBy;
+        this.stockList.put(string, countAfter);
     }
 
-    public void sellItem(Item item){
-        this.stockList.remove(item);
+    public void sellItem(String string, Integer decreaseBy){
+        int countBefore = this.stockList.getOrDefault(string, 0);
+        int countAfter = countBefore - decreaseBy;
+        this.stockList.put(string, countAfter);
+
+
+
     }
+
 }
