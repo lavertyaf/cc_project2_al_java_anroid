@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class Trolley {
 
     private HashMap<String, Integer> stockList;
+    //eg. <"Coffee", 3> if we have 3 Coffees
 
     public Trolley (HashMap<String, Integer> stockList){
         this.stockList = stockList;
@@ -37,8 +38,6 @@ public class Trolley {
         int countBefore = this.stockList.getOrDefault(string, 0);
         int countAfter = countBefore - decreaseBy;
         this.stockList.put(string, countAfter);
-
-
 
     }
 

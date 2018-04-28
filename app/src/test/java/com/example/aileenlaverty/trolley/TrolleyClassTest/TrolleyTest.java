@@ -33,12 +33,18 @@ public class TrolleyTest {
         assertEquals(0, trolley.itemsInStockList());
     }
 
+
     @Test
-    public void canAddItemsToTrolley(){
+    public void canAddItemsToTrolley1(){
+        trolley.addItem(cookie.getName(), 10);
+        assertEquals(10, trolley.itemsInStockList());
+    }
+
+    @Test
+    public void canAddItemsToTrolley2(){
         trolley.addItem(coffee.getName(), 10);
         trolley.addItem(coffee.getName(), 1);
-        trolley.addItem(cookie.getName(), 10);
-        assertEquals(21, trolley.itemsInStockList());
+        assertEquals(11, trolley.itemsInStockList());
     }
 
     @Test
@@ -47,5 +53,17 @@ public class TrolleyTest {
         trolley.addItem(cookie.getName(), 10);
         trolley.sellItem(cookie.getName(), 1);
         assertEquals(19, trolley.itemsInStockList());
+    }
+
+
+    @Test
+    public void canViewStockList(){
+        trolley.addItem(coffee.getName(), 10);
+        trolley.addItem(cookie.getName(), 10);
+        trolley.sellItem(cookie.getName(), 1);
+        trolley.addItem(coffee.getName(), 10);
+        trolley.addItem(cookie.getName(), 10);
+        trolley.sellItem(cookie.getName(), 1);
+        assertEquals("{Cookie=18, Coffee=20}", trolley.getStockList().toString());
     }
 }
