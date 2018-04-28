@@ -15,26 +15,20 @@ public class OrderTest {
 
     Item coffee;
     Item cookie;
-    ArrayList<Item> order;
+    Order order1;
 
     @Before
     public void before() {
     coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
     cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
-    order = new ArrayList<>();
+    ArrayList<Item> order = new ArrayList<>();
+    order.add(coffee);
+    order1 = new Order(order);
     }
 
     @Test
     public void canGetOrder(){
-        order.add(coffee);
-        assertEquals(coffee, order.getOrder);
-    }
-
-    @Test
-    public void canGetTotal(){
-        order.add(coffee);
-        order.add(cookie);
-        assertEquals(3.50, order.getTotal);
+        assertEquals();
     }
 
 
