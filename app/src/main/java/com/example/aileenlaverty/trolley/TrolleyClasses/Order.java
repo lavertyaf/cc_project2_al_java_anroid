@@ -13,7 +13,6 @@ public class Order {
     public Order(ArrayList<Item> order, double total) {
         this.order = order;
         this.total = total;
-        this.item = item;
     }
 
     public ArrayList<Item> getOrder() {
@@ -24,7 +23,11 @@ public class Order {
         return total;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
     public void addToOrder(){
-        this.order.add(item);
+        order.add(item);
     }
 }

@@ -38,7 +38,6 @@ public class ItemTest {
         coke = new Item("Coke",2.00, ItemType.DRINK, 11);
         dietCoke = new Item("Diet Coke", 2.00, ItemType.DRINK, 13);
         tonic = new Item("Tonic", 2.00, ItemType.DRINK, 14);
-        lemonade = new Item("Lemonade", 2.00, ItemType.DRINK, 12893);
         tea = new Item("Tea", 2.50, ItemType.DRINK, 15);
         beer = new Item("Beer", 4.00, ItemType.DRINK, 16);
         whiteWine = new Item("White wine", 4.50, ItemType.DRINK, 17);
@@ -46,6 +45,7 @@ public class ItemTest {
         vodka = new Item("Vodka", 4.00, ItemType.DRINK, 19);
         gin = new Item("Gin", 4.00, ItemType.DRINK, 20);
         whisky = new Item("Whisky",4.00, ItemType.DRINK, 21);
+        lemonade = new Item("Lemonade", 2.00, ItemType.DRINK, 22);
         nuts = new Item("Nuts", 1.50, ItemType.COLD_FOOD, 50);
         cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
         crisps = new Item("Crisps", 1.00, ItemType.COLD_FOOD, 52);
