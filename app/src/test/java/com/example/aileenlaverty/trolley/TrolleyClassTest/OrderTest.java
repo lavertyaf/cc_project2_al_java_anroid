@@ -26,10 +26,22 @@ public class OrderTest {
     order1 = new Order(order);
     }
 
-    @Test
-    public void canGetOrder(){
-        assertEquals();
-    }
+//    @Test
+//    public void canGetOrder(){
+//        assertEquals(coffee.getName(), order1.toString());
+//    }
+
+//    @Test
+//    public void canGetItemInOrder(){
+//        assertEquals(coffee.getName(), order1.getItem());
+//    }
+
+
+//    @Test
+//    public void canAddToOrder(){
+//        order1.addToOrder(cookie);
+//        assertEquals(0,order1.getOrder());
+//    }
 
 
 }

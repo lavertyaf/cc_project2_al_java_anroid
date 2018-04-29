@@ -23,7 +23,9 @@ public class StockSold {
         return till;
     }
 
-    public void addToSoldList(){
+    public void addToSoldList(Item item){
         this.soldList.add(item);
     }
+
+
 }

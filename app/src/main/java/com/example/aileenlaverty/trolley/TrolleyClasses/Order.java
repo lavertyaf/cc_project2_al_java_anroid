@@ -13,15 +13,19 @@ public class Order {
         this.order = order;
     }
 
-    public ArrayList<Item> getOrder() {
-        return order;
+    @Override
+    public String toString() {
+        return "Order{" +
+                "order=" + order +
+                ", item=" + item +
+                '}';
     }
 
     public Item getItem() {
         return item;
     }
 
-    public void addToOrder(){
+    public void addToOrder(Item item){
         order.add(item);
     }
 }
