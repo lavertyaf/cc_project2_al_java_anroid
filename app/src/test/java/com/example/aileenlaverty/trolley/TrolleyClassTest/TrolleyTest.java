@@ -17,14 +17,14 @@ public class TrolleyTest {
     Trolley trolley;
     Item coffee;
     Item cookie;
-    HashMap<Item, Integer> stockList;
+    ArrayList<Item> stockList;
 
 
     @Before
     public void before(){
         coffee = new Item("Coffee", 3.50, ItemType.DRINK, 12);
         cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
-        HashMap<String, Integer> stockList = new HashMap<>();
+        ArrayList<Item> stockList = new ArrayList<>();
         trolley = new Trolley(stockList);
     }
 
@@ -33,37 +33,57 @@ public class TrolleyTest {
         assertEquals(0, trolley.itemsInStockList());
     }
 
-
     @Test
     public void canAddItemsToTrolley1(){
-        trolley.addItem(cookie.getName(), 10);
-        assertEquals(10, trolley.itemsInStockList());
+        trolley.addItemsToStockList(cookie);
+        assertEquals(1, trolley.itemsInStockList());
     }
 
     @Test
     public void canAddItemsToTrolley2(){
-        trolley.addItem(coffee.getName(), 10);
-        trolley.addItem(coffee.getName(), 1);
-        assertEquals(11, trolley.itemsInStockList());
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(coffee);
+        assertEquals(2, trolley.itemsInStockList());
     }
 
     @Test
     public void canSellItems(){
-        trolley.addItem(coffee.getName(), 10);
-        trolley.addItem(cookie.getName(), 10);
-        trolley.sellItem(cookie.getName(), 1);
-        assertEquals(19, trolley.itemsInStockList());
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(cookie);
+        trolley.sellItemFromStockList(cookie);
+        assertEquals(1, trolley.itemsInStockList());
     }
 
+    @Test
+    public void canCountItemInStockList(){
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(cookie);
+        assertEquals(2, trolley.countSameItem(coffee));
+    }
+
+    @Test
+    public void canCountSameItems(){
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(cookie);
+        HashMap<String, Integer> hashMapOfThings = trolley.countSameItems();
+        assertEquals(new Integer(2), hashMapOfThings.get("Coffee"));
+    }
+
+    @Test
+    public void canViewStockListSimple(){
+        trolley.addItemsToStockList(coffee);
+        assertEquals("Coffee: 1", trolley.printItems());
+    }
 
     @Test
     public void canViewStockList(){
-        trolley.addItem(coffee.getName(), 10);
-        trolley.addItem(cookie.getName(), 10);
-        trolley.sellItem(cookie.getName(), 1);
-        trolley.addItem(coffee.getName(), 10);
-        trolley.addItem(cookie.getName(), 10);
-        trolley.sellItem(cookie.getName(), 1);
-        assertEquals("{Cookie=18, Coffee=20}", trolley.getStockList().toString());
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(cookie);
+        trolley.sellItemFromStockList(cookie);
+        trolley.addItemsToStockList(coffee);
+        trolley.addItemsToStockList(cookie);
+        assertEquals("Cookie: 1, Coffee: 2", trolley.printItems());
     }
 }

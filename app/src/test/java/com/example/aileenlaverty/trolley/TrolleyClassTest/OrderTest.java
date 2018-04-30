@@ -22,26 +22,31 @@ public class OrderTest {
     coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
     cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
     ArrayList<Item> order = new ArrayList<>();
-    order.add(coffee);
     order1 = new Order(order);
     }
 
-//    @Test
-//    public void canGetOrder(){
-//        assertEquals(coffee.getName(), order1.toString());
-//    }
+    @Test
+    public void canGetOrder(){
+        order1.addToOrder(coffee);
+        order1.addToOrder(coffee);
+        order1.addToOrder(coffee);
+        order1.addToOrder(cookie);
+        order1.addToOrder(cookie);
+        assertEquals("Cookie: 2, Coffee: 3", order1.printItems());
+    }
 
-//    @Test
-//    public void canGetItemInOrder(){
-//        assertEquals(coffee.getName(), order1.getItem());
-//    }
 
+    @Test
+    public void canAddToOrderSimple(){
+        order1.addToOrder(cookie);
+        assertEquals("Cookie", order1.getOrderItem());
+    }
 
-//    @Test
-//    public void canAddToOrder(){
-//        order1.addToOrder(cookie);
-//        assertEquals(0,order1.getOrder());
-//    }
-
+    @Test
+    public void canAddToOrder(){
+        order1.addToOrder(cookie);
+        order1.addToOrder(coffee);
+        assertEquals("Cookie, Coffee", order1.getOrderItem());
+    }
 
 }

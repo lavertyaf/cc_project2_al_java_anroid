@@ -2,7 +2,8 @@ package com.example.aileenlaverty.trolley.Consumables;
 
 public enum ItemType {
 
-    DRINK("Drink"),
+    HOT_DRINK("Hot Drink"),
+    COLD_DRINK("Cold Drink"),
     HOT_FOOD("Hot food"),
     COLD_FOOD("Cold food");
 
@@ -15,6 +16,4 @@ public enum ItemType {
     public String getName() {
         return name;
     }
-
-
 }

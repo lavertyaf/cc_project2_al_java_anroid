@@ -22,6 +22,7 @@ public class ItemTest {
     private Item vodka;
     private Item gin;
     private Item whisky;
+    private Item hotChocolate;
     private Item nuts;
     private Item cookie;
     private Item crisps;
@@ -34,18 +35,19 @@ public class ItemTest {
 
     @Before
     public void before(){
-        coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
-        coke = new Item("Coke",2.00, ItemType.DRINK, 11);
-        dietCoke = new Item("Diet Coke", 2.00, ItemType.DRINK, 13);
-        tonic = new Item("Tonic", 2.00, ItemType.DRINK, 14);
-        tea = new Item("Tea", 2.50, ItemType.DRINK, 15);
-        beer = new Item("Beer", 4.00, ItemType.DRINK, 16);
-        whiteWine = new Item("White wine", 4.50, ItemType.DRINK, 17);
-        redWine = new Item("Red wine", 4.50, ItemType.DRINK, 18);
-        vodka = new Item("Vodka", 4.00, ItemType.DRINK, 19);
-        gin = new Item("Gin", 4.00, ItemType.DRINK, 20);
-        whisky = new Item("Whisky",4.00, ItemType.DRINK, 21);
-        lemonade = new Item("Lemonade", 2.00, ItemType.DRINK, 22);
+        coffee = new Item("Coffee", 2.50, ItemType.HOT_DRINK, 10);
+        coke = new Item("Coke",2.00, ItemType.COLD_DRINK, 11);
+        dietCoke = new Item("Diet Coke", 2.00, ItemType.COLD_DRINK, 13);
+        tonic = new Item("Tonic", 2.00, ItemType.COLD_DRINK, 14);
+        tea = new Item("Tea", 2.50, ItemType.HOT_DRINK, 15);
+        beer = new Item("Beer", 4.00, ItemType.COLD_DRINK, 16);
+        whiteWine = new Item("White wine", 4.50, ItemType.COLD_DRINK, 17);
+        redWine = new Item("Red wine", 4.50, ItemType.COLD_DRINK, 18);
+        vodka = new Item("Vodka", 4.00, ItemType.HOT_DRINK, 19);
+        gin = new Item("Gin", 4.00, ItemType.COLD_DRINK, 20);
+        whisky = new Item("Whisky",4.00, ItemType.COLD_DRINK, 21);
+        lemonade = new Item("Lemonade", 2.00, ItemType.COLD_DRINK, 22);
+        hotChocolate = new Item("Hot Chocolate", 2.00, ItemType.HOT_DRINK, 23);
         nuts = new Item("Nuts", 1.50, ItemType.COLD_FOOD, 50);
         cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
         crisps = new Item("Crisps", 1.00, ItemType.COLD_FOOD, 52);

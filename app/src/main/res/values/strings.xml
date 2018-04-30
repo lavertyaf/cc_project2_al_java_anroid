@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Trolley</string>
+    <string name="app_name">TrolleyMate</string>
+    <string name="cold_drinks">COLD DRINKS</string>
+    <string name="hot_drinks">HOT DRINKS</string>
+    <string name="cold_snacks">COLD SNACKS</string>
+    <string name="hot_snacks">HOT SNACKS</string>
 </resources>

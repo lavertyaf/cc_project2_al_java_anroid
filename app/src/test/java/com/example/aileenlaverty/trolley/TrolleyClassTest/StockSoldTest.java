@@ -16,6 +16,7 @@ public class StockSoldTest {
 
     Item coffee;
     Item cookie;
+    ArrayList<Item> items;
     StockSold stockSold;
 
 
@@ -23,15 +24,21 @@ public class StockSoldTest {
     public void before(){
         coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
         cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
-        ArrayList<Item> stockSold = new ArrayList<>();
-        stockSold = new StockSold(stockSold, double)
-
+        items = new ArrayList<>();
+        stockSold = new StockSold(items);
     }
 
     @Test
     public void canGetSoldList(){
         stockSold.addToSoldList(cookie);
-        assertEquals(0, stockSold.getSoldList());
+        assertEquals(1, stockSold.getSoldList().size());
+    }
+
+    @Test
+    public void canPrintSoldList(){
+        stockSold.addToSoldList(cookie);
+        stockSold.addToSoldList(coffee);
+        assertEquals("Cookie: 1, Coffee: 1", stockSold.printItems());
     }
 
 }
