@@ -26,4 +26,5 @@ public class OrderActivity extends AppCompatActivity {
 
         orderedItemsListView.setAdapter(ordersAdapter);
     }
+
 }

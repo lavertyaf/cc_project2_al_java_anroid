@@ -39,7 +39,6 @@ public class ItemActivity extends AppCompatActivity {
     }
 
     public void onHomeButtonClick(View button) {
-
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
