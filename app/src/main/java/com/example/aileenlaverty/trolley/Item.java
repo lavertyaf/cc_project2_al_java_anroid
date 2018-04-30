@@ -1,17 +1,19 @@
-package com.example.aileenlaverty.trolley.Consumables;
+package com.example.aileenlaverty.trolley;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 
     private String name;
     private double price;
     private ItemType itemType;
-    private int PLU;
+    private int amount;
 
-    public Item(String name, double price, ItemType itemType, int PLU) {
+    public Item(String name, double price, ItemType itemType, int amount) {
         this.name = name;
         this.price = price;
         this.itemType = itemType;
-        this.PLU = PLU;
+        this.amount = amount;
     }
 
     public String getName() {
@@ -26,7 +28,7 @@ public class Item {
         return itemType;
     }
 
-    public int getPLU() {
-        return PLU;
+    public int getAmount() {
+        return amount;
     }
 }

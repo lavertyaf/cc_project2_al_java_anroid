@@ -1,6 +1,6 @@
 package com.example.aileenlaverty.trolley.TrolleyClasses;
 
-import com.example.aileenlaverty.trolley.Consumables.Item;
+import com.example.aileenlaverty.trolley.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,8 +1,7 @@
 package com.example.aileenlaverty.trolley.TrolleyClassTest;
 
-import com.example.aileenlaverty.trolley.Consumables.Item;
-import com.example.aileenlaverty.trolley.Consumables.ItemType;
-import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
+import com.example.aileenlaverty.trolley.Item;
+import com.example.aileenlaverty.trolley.ItemType;
 import com.example.aileenlaverty.trolley.TrolleyClasses.StockSold;
 
 import org.junit.Before;
@@ -22,8 +21,8 @@ public class StockSoldTest {
 
     @Before
     public void before(){
-        coffee = new Item("Coffee", 2.50, ItemType.DRINK, 10);
-        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
+        coffee = new Item("Coffee", 2.50, ItemType.HOT_DRINK, 10);
+        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 10);
         items = new ArrayList<>();
         stockSold = new StockSold(items);
     }

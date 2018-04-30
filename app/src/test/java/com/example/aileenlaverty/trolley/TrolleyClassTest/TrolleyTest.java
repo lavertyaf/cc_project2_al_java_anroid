@@ -1,7 +1,7 @@
 package com.example.aileenlaverty.trolley.TrolleyClassTest;
 
-import com.example.aileenlaverty.trolley.Consumables.Item;
-import com.example.aileenlaverty.trolley.Consumables.ItemType;
+import com.example.aileenlaverty.trolley.Item;
+import com.example.aileenlaverty.trolley.ItemType;
 import com.example.aileenlaverty.trolley.TrolleyClasses.Trolley;
 
 import org.junit.Before;
@@ -22,8 +22,8 @@ public class TrolleyTest {
 
     @Before
     public void before(){
-        coffee = new Item("Coffee", 3.50, ItemType.DRINK, 12);
-        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 51);
+        coffee = new Item("Coffee", 3.50, ItemType.HOT_DRINK, 10);
+        cookie = new Item("Cookie", 1.00, ItemType.COLD_FOOD, 20);
         ArrayList<Item> stockList = new ArrayList<>();
         trolley = new Trolley(stockList);
     }

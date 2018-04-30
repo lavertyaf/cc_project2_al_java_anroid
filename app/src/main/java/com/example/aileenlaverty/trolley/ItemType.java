@@ -1,4 +1,4 @@
-package com.example.aileenlaverty.trolley.Consumables;
+package com.example.aileenlaverty.trolley;
 
 public enum ItemType {
 

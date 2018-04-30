@@ -1,7 +1,7 @@
 package com.example.aileenlaverty.trolley.TrolleyClassTest;
 
-import com.example.aileenlaverty.trolley.Consumables.Item;
-import com.example.aileenlaverty.trolley.Consumables.ItemType;
+import com.example.aileenlaverty.trolley.Item;
+import com.example.aileenlaverty.trolley.ItemType;
 import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
 
 import org.junit.Before;
