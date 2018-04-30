@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Activities.OrderActivity">
 
+    <TextView
+        android:id="@+id/orderedItemsListViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="299dp" />
 </android.support.constraint.ConstraintLayout>

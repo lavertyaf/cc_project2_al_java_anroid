@@ -8,8 +8,52 @@
 
     <ListView
         android:id="@+id/itemsListViewId"
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:layout_width="348dp"
+        android:layout_height="450dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linTop"
+        android:layout_width="378dp"
+        android:layout_height="94dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemsListViewId">
+
+        <Button
+            android:id="@+id/addButtonTextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/order_button"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/viewButtonTextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/view_button"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/homeButtontextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/home_button"
+            android:textSize="30sp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

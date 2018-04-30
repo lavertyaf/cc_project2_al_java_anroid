@@ -47,4 +47,8 @@ public class Order {
         result = result.substring(0, result.length() - 2);
         return result;
     }
+
+    public ArrayList<Item> getOrders() {
+        return orders;
+    }
 }

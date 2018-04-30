@@ -4,4 +4,7 @@
     <string name="hot_drinks">HOT DRINKS</string>
     <string name="cold_snacks">COLD SNACKS</string>
     <string name="hot_snacks">HOT SNACKS</string>
+    <string name="order_button">Add</string>
+    <string name="view_button">View</string>
+    <string name="home_button">Home</string>
 </resources>
