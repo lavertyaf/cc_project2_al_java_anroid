@@ -31,9 +31,9 @@ public class ItemsAdapter extends ArrayAdapter<Item> {
 
         TextView itemName = listItemView.findViewById(R.id.itemNameTextViewId);
         itemName.setText(currentItem.getName().toString());
-        
-        listItemView.setTag(currentItem);
-        
+
+        listItemView.setTag();
+
         return listItemView;
 
     }

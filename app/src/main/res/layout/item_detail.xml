@@ -23,10 +23,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/customselector"
         android:text="TextView"
+        android:onClick="onItemClick"
         android:textAlignment="center"
         android:textSize="35sp"
-        android:background="@drawable/customselector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/amountTextViewId"
         app:layout_constraintTop_toTopOf="parent" />

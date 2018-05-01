@@ -22,9 +22,9 @@ public class OrderActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ArrayList<Item> orderedItems = (ArrayList<Item>) intent.getSerializableExtra("orderedItems");
         OrdersAdapter ordersAdapter = new OrdersAdapter(this, orderedItems);
-        ListView orderedItemsListView = findViewById(R.id.orderedItemsListViewId);
+//        ListView orderedItemsListView = findViewById(R.id.orderedItemsListViewId);
 
-        orderedItemsListView.setAdapter(ordersAdapter);
+//        orderedItemsListView.setAdapter(ordersAdapter);
     }
 
 }
