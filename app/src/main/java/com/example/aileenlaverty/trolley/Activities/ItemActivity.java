@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.aileenlaverty.trolley.Item;
@@ -25,6 +26,7 @@ import static com.example.aileenlaverty.trolley.R.color.colorPrimary;
 public class ItemActivity extends AppCompatActivity {
 
     private ArrayList<Item> orderList;
+    private ListView itemsListView;
 
 
     @Override
@@ -36,17 +38,27 @@ public class ItemActivity extends AppCompatActivity {
         orderList = new ArrayList<>();
         Intent intent = getIntent();
         ArrayList<Item> itemsList = (ArrayList<Item>) intent.getSerializableExtra("itemsList");
-        ItemsAdapter itemsAdapter = new ItemsAdapter(this, itemsList);
-        ListView itemsListView = findViewById(R.id.itemsListViewId);
+        final ItemsAdapter itemsAdapter = new ItemsAdapter(this, itemsList);
+        itemsListView = findViewById(R.id.itemsListViewId);
 
         itemsListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        itemsListView.setItemsCanFocus(true);
+//        itemsListView.setItemsCanFocus(true);
 
+        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView adapterView, View view, int position, long id){
+                itemsListView.invalidateViews();
+            }
+        });
+//        itemsListView.getCheckedItemPositions();
         itemsListView.setAdapter(itemsAdapter);
-
     }
 
+
+
+
     public void onItemClick(View listItem) {
+
 
 
 
@@ -56,7 +68,6 @@ public class ItemActivity extends AppCompatActivity {
             listItem.setSelected(true);
 
 //            orderList.add((Item) listItem.getTag(0));
-
         }
         else{
             listItem.setTag(R.id.item_color_key, "off");
