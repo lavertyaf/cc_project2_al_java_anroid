@@ -1,5 +1,6 @@
 package com.example.aileenlaverty.trolley.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class OrderActivity extends AppCompatActivity {
 
     private ArrayList<Item> orderList;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,18 @@ public class OrderActivity extends AppCompatActivity {
         OrdersAdapter ordersAdapter = new OrdersAdapter(this, orderList);
         ListView orderedItemsListView = findViewById(R.id.orderedItemsListViewId);
 
-        TextView priceTextView = findViewById(R.id.priceTextViewId);
+
+        order.getOrderTotal();
+        TextView totalInPoundsTextView = textView.findViewById(R.id.totalInPoundsTextViewId);
+
+
 
         orderedItemsListView.setAdapter(ordersAdapter);
+
+
+
+
+
     }
 
 }

@@ -8,11 +8,13 @@ import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.aileenlaverty.trolley.Item;
 import com.example.aileenlaverty.trolley.Adapters.ItemsAdapter;
 import com.example.aileenlaverty.trolley.Items;
 import com.example.aileenlaverty.trolley.R;
+import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,8 @@ public class ItemActivity extends AppCompatActivity {
 
     private ArrayList<Item> orderList;
     private ListView itemsListView;
+    TextView textView;
+    Order order;
 
 
     @Override
@@ -60,6 +64,7 @@ public class ItemActivity extends AppCompatActivity {
             Intent intent = new Intent(this, OrderActivity.class);
             intent.putExtra("orderList", orderList);
             startActivity(intent);
+
         }
 
         public void onAddButtonClick (View button) {
@@ -71,9 +76,14 @@ public class ItemActivity extends AppCompatActivity {
                   Log.i("CHECKED ITEMS",item.getName() + " was selected");
                     if (isItemActuallySelected){
                         orderList.add(item);
+
                     }
+
+                    order.getOrderTotal();
               }
 
+//            TextView priceTextView = textView.findViewById(R.id.priceTextViewId);
+//            priceTextView.setText((int)order.getOrderTotal());
 
 
         }

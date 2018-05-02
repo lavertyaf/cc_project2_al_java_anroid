@@ -10,10 +10,14 @@ import android.widget.TextView;
 
 import com.example.aileenlaverty.trolley.Item;
 import com.example.aileenlaverty.trolley.R;
+import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
 
 import java.util.ArrayList;
 
 public class OrdersAdapter extends ArrayAdapter<Item>{
+
+    TextView textView;
+    Order order;
 
 
     public OrdersAdapter(Context context, ArrayList<Item> orders){
@@ -38,11 +42,13 @@ public class OrdersAdapter extends ArrayAdapter<Item>{
         TextView itemName = listItemView.findViewById(R.id.orderedItemNameTextViewId);
         itemName.setText(currentItem.getName().toString());
 
+//        TextView totalInPoundsTextView = textView.findViewById(R.id.totalInPoundsTextViewId);
+//        totalInPoundsTextView.setText((int)order.getOrderTotal());
+
         listItemView.setTag(currentItem);
 
-
         return listItemView;
-        
 
     }
+
 }
