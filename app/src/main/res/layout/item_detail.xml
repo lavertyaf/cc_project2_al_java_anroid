@@ -8,7 +8,7 @@
     >
 
     <TextView
-        android:id="@+id/amountTextViewId"
+        android:id="@+id/priceTextViewId"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/itemNameTextViewId"
+        android:id="@+id/orderedItemNameTextViewId"
         android:layout_width="269dp"
         android:layout_height="68dp"
         android:layout_marginEnd="8dp"
@@ -30,7 +30,7 @@
         android:textAlignment="center"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/amountTextViewId"
+        app:layout_constraintStart_toEndOf="@+id/priceTextViewId"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

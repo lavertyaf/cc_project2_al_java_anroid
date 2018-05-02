@@ -13,6 +13,14 @@ public class Order {
         this.orders = order;
     }
 
+    public Order() {
+        orders = new ArrayList<Item>();
+    }
+
+    public ArrayList<Item> getOrderedItemList(){
+        return new ArrayList<Item>(orders);
+    }
+
     public HashMap<String, Integer> countSameItems(){
         HashMap<String, Integer> result = new HashMap<String, Integer>();
         for ( Item item :orders) {
@@ -50,5 +58,13 @@ public class Order {
 
     public ArrayList<Item> getOrders() {
         return orders;
+    }
+
+    public double getOrderTotal(){
+        double total = 0;
+        for (Item itemInOrder:orders) {
+            total += itemInOrder.getPrice();
+        }
+        return total;
     }
 }

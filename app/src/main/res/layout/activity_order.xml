@@ -6,11 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".Activities.OrderActivity">
 
-    <TextView
+    <ListView
         android:id="@+id/orderedItemsListViewId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="299dp" />
+        android:layout_width="363dp"
+        android:layout_height="320dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/totalTextViewId"
+        android:layout_width="141dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/total"
+        android:textAlignment="viewStart"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/linTop"
+        app:layout_constraintEnd_toStartOf="@+id/totalInPoundsTextViewId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderedItemsListViewId" />
+
+    <TextView
+        android:id="@+id/totalInPoundsTextViewId"
+        android:layout_width="168dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="27dp"
+        android:text="£"
+        android:textAlignment="viewStart"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/linTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderedItemsListViewId" />
+
+    <LinearLayout
+        android:id="@+id/linTop"
+        android:layout_width="378dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="132dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderedItemsListViewId">
+
+        <Button
+            android:id="@+id/completeButtonTextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCompleteOrderButtonClick"
+            android:text="@string/complete_order"
+            android:textSize="30sp" />
+
+
+        <Button
+            android:id="@+id/homeButtonTextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/home_button"
+            android:textSize="30sp" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

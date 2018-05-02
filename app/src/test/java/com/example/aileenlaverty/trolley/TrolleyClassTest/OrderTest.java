@@ -49,4 +49,11 @@ public class OrderTest {
         assertEquals("Cookie, Coffee", order1.getOrderItem());
     }
 
+    @Test
+    public void canGetOrderTotal(){
+        order1.addToOrder(cookie);
+        order1.addToOrder(coffee);
+        assertEquals(3.50, order1.getOrderTotal(), 0.01);
+    }
+
 }
