@@ -79,7 +79,7 @@ public class ItemActivity extends AppCompatActivity {
 
                     }
 
-                    order.getOrderTotal();
+//                    order.getOrderTotal();
               }
 
 //            TextView priceTextView = textView.findViewById(R.id.priceTextViewId);

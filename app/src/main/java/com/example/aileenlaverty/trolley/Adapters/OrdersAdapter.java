@@ -37,7 +37,7 @@ public class OrdersAdapter extends ArrayAdapter<Item>{
         Item currentItem = getItem(position);
 
         TextView price = listItemView.findViewById(R.id.priceTextViewId);
-        price.setText(String.valueOf(currentItem.getPrice()));
+        price.setText(String.format("%.2f", currentItem.getPrice()));
 
         TextView itemName = listItemView.findViewById(R.id.orderedItemNameTextViewId);
         itemName.setText(currentItem.getName().toString());

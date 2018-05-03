@@ -38,9 +38,9 @@ public class OrderActivity extends AppCompatActivity {
         ListView orderedItemsListView = findViewById(R.id.orderedItemsListViewId);
 
 
-        order.getOrderTotal();
-        TextView totalInPoundsTextView = textView.findViewById(R.id.totalInPoundsTextViewId);
-
+//        order.getOrderTotal();
+//        TextView totalInPoundsTextView = textView.findViewById(R.id.totalInPoundsTextViewId);
+//
 
 
         orderedItemsListView.setAdapter(ordersAdapter);
