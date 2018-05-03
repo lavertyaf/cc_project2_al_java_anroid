@@ -31,4 +31,8 @@ public class Item implements Serializable{
     public int getAmount() {
         return amount;
     }
+
+    public void decreaseAmountBy1(){
+        amount -= 1;
+    }
 }

@@ -33,9 +33,11 @@ public class OrdersAdapter extends ArrayAdapter<Item> {
 
         TextView price = listItemView.findViewById(R.id.priceTextViewId);
         price.setText(String.format("%.2f", currentItem.getPrice()));
+        price.setBackgroundColor(getContext().getColor(R.color.light_green));
 
         TextView itemName = listItemView.findViewById(R.id.orderedItemNameTextViewId);
         itemName.setText(currentItem.getName().toString());
+        itemName.setBackgroundColor(getContext().getColor(R.color.light_green));
 
         listItemView.setTag(currentItem);
 

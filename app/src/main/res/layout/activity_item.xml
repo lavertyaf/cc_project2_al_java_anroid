@@ -38,7 +38,8 @@
             android:layout_weight="1"
             android:onClick="onAddButtonClick"
             android:text="@string/order_button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:background="@color/light_green"/>
 
         <Button
             android:id="@+id/viewButtonTextViewId"
@@ -47,7 +48,8 @@
             android:layout_weight="1"
             android:onClick="onViewButtonClick"
             android:text="@string/view_button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:background="@color/light_green"/>
 
         <Button
             android:id="@+id/homeButtontextViewId"
@@ -56,6 +58,7 @@
             android:layout_weight="1"
             android:onClick="onHomeButtonClick"
             android:text="@string/home_button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:background="@color/light_green"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

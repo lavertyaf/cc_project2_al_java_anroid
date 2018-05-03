@@ -2,12 +2,10 @@ package com.example.aileenlaverty.trolley;
 
 import java.util.ArrayList;
 
-public class Items {
+public class ItemsFactory {
 
-    private ArrayList<Item> list;
-
-    public Items(){
-        list = new ArrayList<Item>();
+    public static ArrayList<Item> getNewStockList() {
+        ArrayList<Item> list = new ArrayList<Item>();
         list.add(new Item("Coke",2.00, ItemType.COLD_DRINK, 15));
         list.add(new Item("Diet Coke", 2.00, ItemType.COLD_DRINK, 15));
         list.add(new Item("Lemonade", 2.00, ItemType.COLD_DRINK, 10));
@@ -28,9 +26,12 @@ public class Items {
         list.add(new Item("Ham Panini", 4.00, ItemType.HOT_FOOD, 10));
         list.add(new Item("Pepperoni Pizza", 4.00, ItemType.HOT_FOOD, 10));
         list.add(new Item("Croissant", 3.50, ItemType.HOT_FOOD, 10));
-    }
+        return list;
 
-    public ArrayList<Item> getList() {
-        return new ArrayList<Item>(list);
+
+
+
+
+
     }
 }

@@ -41,12 +41,14 @@ public class ItemsAdapter extends ArrayAdapter<Item> {
         listItemView.setTag(currentItem);
 
         if (itemsListView.isItemChecked(position)){
-            listItemView.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
-            itemName.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
+            listItemView.setBackgroundColor(getContext().getColor(R.color.orange));
+            itemName.setBackgroundColor(getContext().getColor(R.color.orange));
+            amount.setBackgroundColor(getContext().getColor(R.color.orange));
 
         } else {
-            listItemView.setBackgroundColor(getContext().getColor(R.color.colorAccent));
-            itemName.setBackgroundColor(getContext().getColor(R.color.colorAccent));
+            listItemView.setBackgroundColor(getContext().getColor(R.color.grey));
+            itemName.setBackgroundColor(getContext().getColor(R.color.grey));
+            amount.setBackgroundColor(getContext().getColor(R.color.grey));
         }
 
         return listItemView;

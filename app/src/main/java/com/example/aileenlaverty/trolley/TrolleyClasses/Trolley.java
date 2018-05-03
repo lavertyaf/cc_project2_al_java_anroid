@@ -26,8 +26,12 @@ public class Trolley {
         stockList.add(item);
     }
 
-    public void sellItemFromStockList(Item item) {
-        stockList.remove(item);
+    public void sellItemFromStockList(Item requestedItem) {
+        for (Item i : stockList){
+            if (i.getName().equals(requestedItem.getName())){
+                i.decreaseAmountBy1();
+            }
+        }
     }
 
     public int countSameItem(Item item){

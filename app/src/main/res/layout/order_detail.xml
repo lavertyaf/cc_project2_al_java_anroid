@@ -8,11 +8,8 @@
 
     <TextView
         android:id="@+id/orderedItemNameTextViewId"
-        android:layout_width="181dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="230dp"
+        android:layout_height="85dp"
         android:text="itemName"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -22,18 +19,15 @@
 
     <TextView
         android:id="@+id/priceTextViewId"
-        android:layout_width="117dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="140dp"
+        android:layout_height="85dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="price"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/orderedItemNameTextViewId"
         app:layout_constraintTop_toTopOf="parent" />
 

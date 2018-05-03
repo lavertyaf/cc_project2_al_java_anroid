@@ -14,9 +14,9 @@ import android.widget.Toast;
 
 import com.example.aileenlaverty.trolley.Item;
 import com.example.aileenlaverty.trolley.Adapters.ItemsAdapter;
-import com.example.aileenlaverty.trolley.Items;
 import com.example.aileenlaverty.trolley.R;
 import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
+import com.example.aileenlaverty.trolley.TrolleyClasses.Trolley;
 
 import java.util.ArrayList;
 
@@ -25,6 +25,8 @@ public class ItemActivity extends AppCompatActivity {
     private ListView itemsListView;
     TextView textView;
     Order order;
+    Trolley trolley;
+    ArrayList<Item> stockList;
 
 
 
@@ -32,13 +34,14 @@ public class ItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
-
-//        order = new ArrayList<>();
         order = new Order();
         Intent intent = getIntent();
-        ArrayList<Item> itemsList = (ArrayList<Item>) intent.getSerializableExtra("itemsList");
-        final ItemsAdapter itemsAdapter = new ItemsAdapter(this, itemsList);
+        stockList = (ArrayList<Item>) intent.getSerializableExtra("itemsList");
+        final ItemsAdapter itemsAdapter = new ItemsAdapter(this, stockList);
         itemsListView = findViewById(R.id.itemsListViewId);
+
+        trolley = new Trolley(stockList);
+
 
         itemsListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
@@ -48,15 +51,12 @@ public class ItemActivity extends AppCompatActivity {
                 itemsListView.invalidateViews();
             }
         });
-
-//        ItemsAdapter.notifyDataSetChanged();
-
         itemsListView.setAdapter(itemsAdapter);
-    }
+        }
 
         public void onHomeButtonClick (View button){
             Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
 
@@ -77,6 +77,7 @@ public class ItemActivity extends AppCompatActivity {
 
                   if (isItemActuallySelected){
                       order.addToOrder(item);
+                      trolley.sellItemFromStockList(item);
                   }
               }
 

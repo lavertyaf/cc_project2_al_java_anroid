@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="cellback">#FF4082</color>
+    <color name="orange">#FF3333</color>
+    <color name="grey">#999999</color>
+    <color name="light_green">#669999</color>
+    <color name="dark_green">#003333</color>
 </resources>
