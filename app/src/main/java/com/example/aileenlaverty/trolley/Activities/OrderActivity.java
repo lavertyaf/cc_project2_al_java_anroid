@@ -16,8 +16,6 @@ import com.example.aileenlaverty.trolley.TrolleyClasses.Order;
 public class OrderActivity extends AppCompatActivity {
 
     Order order;
-//    double totalInPoundsTextView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

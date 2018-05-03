@@ -29,7 +29,6 @@ public class ItemsAdapter extends ArrayAdapter<Item> {
 
         ListView itemsListView = (ListView) parent;
 
-
         Item currentItem = getItem(position);
         
         TextView amount = listItemView.findViewById(R.id.priceTextViewId);

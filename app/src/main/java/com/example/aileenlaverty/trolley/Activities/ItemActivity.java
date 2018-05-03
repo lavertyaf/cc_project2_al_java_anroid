@@ -85,6 +85,22 @@ public class ItemActivity extends AppCompatActivity {
                 itemsListView.setItemChecked(y, false);
             }
 
+//            public void onAddButtonClick (View button) {
+//                SparseBooleanArray checkedItems = itemsListView.getCheckedItemPositions();
+//                //checked items looks like (0:true, 1:false, 2; true) - if I selected 0,1,2 and then unselected 1
+//                for (int i=0; i<checkedItems.size(); i++){
+//                    Item item = (Item) itemsListView.getAdapter().getItem( checkedItems.keyAt(i) );
+//                    boolean isItemActuallySelected = checkedItems.valueAt(i);
+//
+//                    Log.i("CHECKED ITEMS",item.getName() + " was selected");
+//
+//                    if (isItemActuallySelected){
+//                        order.addToOrder(item);
+//                        trolley.sellItemFromStockList(item);
+//                    }
+//                    itemsListView.setItemChecked(i, false);
+//                }
+
             Toast toast= Toast.makeText(getApplicationContext(),
                     "Item(s) have been added", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 40, 1000);
