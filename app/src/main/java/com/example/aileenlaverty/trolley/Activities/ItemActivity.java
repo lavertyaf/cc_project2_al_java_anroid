@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class ItemActivity extends AppCompatActivity {
 
-//    private ArrayList<Item> order;
     private ListView itemsListView;
     TextView textView;
     Order order;
@@ -68,78 +67,29 @@ public class ItemActivity extends AppCompatActivity {
         }
 
         public void onAddButtonClick (View button) {
-              SparseBooleanArray checkedItems = itemsListView.getCheckedItemPositions();
+              SparseBooleanArray checkedItems = itemsListView.getCheckedItemPositions().clone();
               //checked items looks like (0:true, 1:false, 2; true) - if I selected 0,1,2 and then unselected 1
               for (int i=0; i<checkedItems.size(); i++){
                   Item item = (Item) itemsListView.getAdapter().getItem( checkedItems.keyAt(i) );
                   boolean isItemActuallySelected = checkedItems.valueAt(i);
+
                   Log.i("CHECKED ITEMS",item.getName() + " was selected");
-                    if (isItemActuallySelected){
-                        order.addToOrder(item);
-                    }
 
-                  Toast toast= Toast.makeText(getApplicationContext(),
-                          "Item(s) have been added", Toast.LENGTH_SHORT);
-                  toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 40, 1000);
-                  toast.show();
-
-                  if (isItemActuallySelected) {
-                      itemsListView.setItemChecked(i,false);
+                  if (isItemActuallySelected){
+                      order.addToOrder(item);
                   }
-
-
-
-
-                  adapter.clear();
-                  adpater.notifyDataSetChanged();
-
-//                    itemsListView.clearChoices();
-//                  itemsListView.destroyDrawingCache();
-
-//                  itemsListView.setItemChecked(i, false);
               }
 
+            for(int y = 0; y<itemsListView.getCheckedItemPositions().size(); y++){
+                itemsListView.setItemChecked(y, false);
+            }
+
+            Toast toast= Toast.makeText(getApplicationContext(),
+                    "Item(s) have been added", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 40, 1000);
+            toast.show();
+
         }
-
-
-
 }
 
 
-
-//    Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("itemsList", itemsList);
-//    startActivity(intent);
-//}
-
-//    public void onItemClick(View listItem) {
-//
-//        if(listItem.getTag(R.id.item_color_key) == null || listItem.getTag(R.id.item_color_key) == "off"){
-//            listItem.setTag(R.id.item_color_key, "on");
-//            listItem.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-//            listItem.setSelected(true);
-//
-////            orderList.add((Item) listItem.getTag(0));
-//        }
-//        else{
-//            listItem.setTag(R.id.item_color_key, "off");
-//            listItem.setBackgroundColor(getResources().getColor(cellback));
-//            listItem.setSelected(false);
-////            orderList.remove(listItem.getTag(0));
-//        }
-
-
-//        if (canBeSelected) {
-//            listItem.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-//            listItem.setSelected(true);
-//
-//            orderList.add((Item) listItem.getTag(0));
-//        } else if(canBeSelected == false)
-//
-//        {
-//
-//                listItem.setBackgroundColor(getResources().getColor(cellback));
-//                listItem.setSelected(false);
-//                orderList.remove(listItem.getTag(0));
-//            }
-//        }
