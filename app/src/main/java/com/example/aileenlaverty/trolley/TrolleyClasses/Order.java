@@ -2,10 +2,11 @@ package com.example.aileenlaverty.trolley.TrolleyClasses;
 
 import com.example.aileenlaverty.trolley.Item;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Order {
+public class Order implements Serializable {
 
     private ArrayList<Item> orders;
 

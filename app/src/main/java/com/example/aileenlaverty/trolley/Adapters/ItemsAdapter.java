@@ -42,10 +42,11 @@ public class ItemsAdapter extends ArrayAdapter<Item> {
 
         if (itemsListView.isItemChecked(position)){
             listItemView.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
+            itemName.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
 
         } else {
             listItemView.setBackgroundColor(getContext().getColor(R.color.colorAccent));
-
+            itemName.setBackgroundColor(getContext().getColor(R.color.colorAccent));
         }
 
         return listItemView;

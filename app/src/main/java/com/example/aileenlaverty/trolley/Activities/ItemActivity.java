@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aileenlaverty.trolley.Item;
 import com.example.aileenlaverty.trolley.Adapters.ItemsAdapter;
@@ -20,10 +22,11 @@ import java.util.ArrayList;
 
 public class ItemActivity extends AppCompatActivity {
 
-    private ArrayList<Item> orderList;
+//    private ArrayList<Item> order;
     private ListView itemsListView;
     TextView textView;
     Order order;
+
 
 
     @Override
@@ -31,7 +34,8 @@ public class ItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
 
-        orderList = new ArrayList<>();
+//        order = new ArrayList<>();
+        order = new Order();
         Intent intent = getIntent();
         ArrayList<Item> itemsList = (ArrayList<Item>) intent.getSerializableExtra("itemsList");
         final ItemsAdapter itemsAdapter = new ItemsAdapter(this, itemsList);
@@ -46,12 +50,9 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
 
-//        itemsListView.getCheckedItemPositions();
 //        ItemsAdapter.notifyDataSetChanged();
-//        itemsListView.deferNotifyDataSetChanged();
 
         itemsListView.setAdapter(itemsAdapter);
-
     }
 
         public void onHomeButtonClick (View button){
@@ -62,9 +63,8 @@ public class ItemActivity extends AppCompatActivity {
 
         public void onViewButtonClick (View button){
             Intent intent = new Intent(this, OrderActivity.class);
-            intent.putExtra("orderList", orderList);
+            intent.putExtra("order", order);
             startActivity(intent);
-
         }
 
         public void onAddButtonClick (View button) {
@@ -75,18 +75,32 @@ public class ItemActivity extends AppCompatActivity {
                   boolean isItemActuallySelected = checkedItems.valueAt(i);
                   Log.i("CHECKED ITEMS",item.getName() + " was selected");
                     if (isItemActuallySelected){
-                        orderList.add(item);
-
+                        order.addToOrder(item);
                     }
 
-//                    order.getOrderTotal();
+                  Toast toast= Toast.makeText(getApplicationContext(),
+                          "Item(s) have been added", Toast.LENGTH_SHORT);
+                  toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 40, 1000);
+                  toast.show();
+
+                  if (isItemActuallySelected) {
+                      itemsListView.setItemChecked(i,false);
+                  }
+
+
+
+
+                  adapter.clear();
+                  adpater.notifyDataSetChanged();
+
+//                    itemsListView.clearChoices();
+//                  itemsListView.destroyDrawingCache();
+
+//                  itemsListView.setItemChecked(i, false);
               }
 
-//            TextView priceTextView = textView.findViewById(R.id.priceTextViewId);
-//            priceTextView.setText((int)order.getOrderTotal());
-
-
         }
+
 
 
 }

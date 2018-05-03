@@ -7,7 +7,8 @@
     <string name="order_button">Add</string>
     <string name="view_button">View</string>
     <string name="home_button">Home</string>
+    <string name="back_button">Back</string>
     <string name="order_page">Order</string>
-    <string name="total">TOTAL</string>
+    <string name="total">TOTAL          £</string>
     <string name="complete_order">COMPLETE</string>
 </resources>
